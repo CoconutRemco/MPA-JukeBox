@@ -4,15 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51e7e7b6-4c62-441f-938b-5426b484898b" name="Changes" comment="test">
-      <change beforePath="$PROJECT_DIR$/.idea/MPA JukeBox.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MPA JukeBox.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="51e7e7b6-4c62-441f-938b-5426b484898b" name="Changes" comment="Home page aangemaakt">
+      <change afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/blobs/version" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jukebox/Mpapp/static/Mpapp/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jukebox/Mpapp/templates/Mpapp/base_generic.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jukebox/Mpapp/templates/Mpapp/jukebox.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jukebox/Mpapp/templates/registration/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jukebox/Mpapp/templates/registration/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jukebox/Mpapp/templates/Mpapp/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Jukebox/Mpapp/templates/Mpapp/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jukebox/Mpapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Jukebox/Mpapp/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,6 +47,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/remco/PycharmProjects/MPA JukeBox",
     "node.js.detected.package.eslint": "true",
@@ -38,7 +55,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.sync",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -61,6 +78,8 @@
       <workItem from="1710841817119" duration="264000" />
       <workItem from="1710842088941" duration="26000" />
       <workItem from="1710842558667" duration="296000" />
+      <workItem from="1710842863490" duration="638000" />
+      <workItem from="1710843525208" duration="6419000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -70,7 +89,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710840889371</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Home page aangemaakt">
+      <option name="closed" value="true" />
+      <created>1710843492962</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710843492962</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -78,6 +105,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="Home page aangemaakt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Home page aangemaakt" />
   </component>
 </project>

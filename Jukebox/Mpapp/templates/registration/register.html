@@ -1,0 +1,24 @@
+{% extends "Mpapp/base_generic.html" %}
+
+{% block content %}
+  <h2>Register</h2>
+  <form method="post">
+  {% csrf_token %}
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username">
+      <p class="input-hint">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</p>
+    </div>
+    <div>
+      <label for="password1">Password:</label>
+      <input type="password" id="password1" name="password1">
+      <p class="input-hint">Your password can’t be too similar to your other personal information. Your password must contain at least 8 characters. Your password can’t be a commonly used password. Your password can’t be entirely numeric.</p>
+    </div>
+    <div>
+      <label for="password2">Password confirmation:</label>
+      <input type="password" id="password2" name="password2">
+      <p class="input-hint">Enter the same password as before, for verification.</p>
+    </div>
+    <button type="submit">Register</button>
+  </form>
+{% endblock %}
