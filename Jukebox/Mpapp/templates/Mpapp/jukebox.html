@@ -3,4 +3,21 @@
 {% block content %}
   <h2>Jukebox</h2>
   <p>This is your jukebox page.</p>
+  <button id="get-playlists">Get Playlists</button>
+  <div id="playlists">
+    {% for playlist in playlists %}
+    <div>
+      <h2>{{ playlist.name }}</h2>
+      <p>Owner: {{ playlist.owner }}</p>
+      <p>Total tracks: {{ playlist.total_tracks }}</p>
+      <img src="{{ playlist.image_url }}" alt="{{ playlist.name }}">
+    </div>
+    {% endfor %}
+  </div>
+
+  <script>
+    document.getElementById('get-playlists').addEventListener('click', function() {
+      window.location.href = '/spotify_request';
+    });
+  </script>
 {% endblock %}
