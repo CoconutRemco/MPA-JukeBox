@@ -5,45 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51e7e7b6-4c62-441f-938b-5426b484898b" name="Changes" comment="Log in pagina en register werkt nu nu bezig met spotify api">
-      <change afterPath="$PROJECT_DIR$/Jukebox/Mpapp/templates/Mpapp/create_genre.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Jukebox/Mpapp/templates/Mpapp/create_playlist.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Jukebox/Mpapp/templates/Mpapp/create_song.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Jukebox/Mpapp/templates/Mpapp/song_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Jukebox/Mpapp/templates/Mpapp/user_playlists.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache-4.0.0.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache-4.0.0.dist-info/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache-4.0.0.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache-4.0.0.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache-4.0.0.dist-info/REQUESTED" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache-4.0.0.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache-4.0.0.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache/client/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache/client/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache/client/hash.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache/client/murmur3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache/client/rendezvous.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache/client/retrying.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache/exceptions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache/fallback.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache/pool.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache/serde.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache/test/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache/test/conftest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache/test/test_benchmark.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache/test/test_client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache/test/test_client_hash.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache/test/test_client_retry.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache/test/test_compression.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache/test/test_integration.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache/test/test_rendezvous.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache/test/test_serde.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache/test/test_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env/Lib/site-packages/pymemcache/test/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jukebox/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jukebox/Mpapp/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Jukebox/Mpapp/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Jukebox/Mpapp/templates/Mpapp/jukebox.html" beforeDir="false" afterPath="$PROJECT_DIR$/Jukebox/Mpapp/templates/Mpapp/jukebox.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jukebox/Mpapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Jukebox/Mpapp/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +24,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Api-Branch" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -72,24 +43,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python tests.Python tests in tests.py.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/remco/PycharmProjects/MPA JukeBox&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python tests.Python tests in tests.py.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/remco/PycharmProjects/MPA JukeBox",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
