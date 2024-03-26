@@ -1,7 +1,18 @@
-<!-- Jukebox/Mpapp/templates/Mpapp/create_playlist.html -->
-{% extends "Mpapp/base_generic.html" %}
+{% extends 'Mpapp/base.html' %}
 
 {% block content %}
   <h2>Create a new playlist</h2>
-  <!-- ... Form for creating a new Playlist instance ... -->
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+  </form>
+
+  <h2>All songs</h2>
+  {% for song in songs %}
+    <div>
+      <h3>{{ song.title }}</h3>
+      <p>{{ song.artist }}</p>
+    </div>
+  {% endfor %}
 {% endblock %}

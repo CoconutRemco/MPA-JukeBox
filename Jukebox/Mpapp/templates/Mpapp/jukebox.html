@@ -3,8 +3,30 @@
 {% block content %}
   <h2>Jukebox</h2>
   <p>This is your jukebox page.</p>
-  <button id="get-playlists">Get Playlists</button>
 
+  <h2>All songs</h2>
+  {% for song in songs %}
+    <div>
+      <h3>{{ song.title }}</h3>
+      <p>{{ song.artist }}</p>
+    </div>
+  {% endfor %}
+
+  <h2>All playlists</h2>
+  {% for playlist in playlists %}
+    <div>
+      <h3>{{ playlist.name }}</h3>
+      <p>{{ playlist.owner }}</p>
+      <p>Songs:</p>
+      <ul>
+        {% for song in playlist.songs.all %}
+          <li>{{ song.title }} by {{ song.artist }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+
+  <button id="get-playlists">Get Playlists</button>
 
   <script>
     document.getElementById('get-playlists').addEventListener('click', function() {
