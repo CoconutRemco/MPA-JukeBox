@@ -1,30 +1,44 @@
 {% extends "Mpapp/base_generic.html" %}
+{% load static %}
+{% load zip_filter %}
 
 {% block content %}
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'Mpapp/styles.css' %}">
+</head>
   <h2>Jukebox</h2>
-  <p>This is your jukebox page.</p>
 
-  <h2>All songs</h2>
-  {% for song in songs %}
-    <div>
-      <h3>{{ song.title }}</h3>
-      <p>{{ song.artist }}</p>
-    </div>
-  {% endfor %}
-
-{% for playlist in playlists %}
-<div>
-  <h3>{{ playlist.name }}</h3>
-  <p>{{ playlist.owner }}</p>
-  <p>Songs:</p>
-  <ul>
-    {% for song in playlist.songs.all %}
-    <li>{{ song.title }} by {{ song.artist }}</li>
+  <div class="song-list">
+    <h2>All songs</h2>
+    {% for song in songs %}
+    <div class="song">
+        <img src="{{ song.image_url }}" alt="{{ song.title }}">
+        <div class="song-info">
+          <h3>{{ song.title }}</h3>
+          <p>{{ song.artist }}</p>
+         <a href="{{ song.spotify_url }}" class="button play-button" target="_blank">
+          <span class="play-icon">&#9658;</span> <!-- This is a simple play icon -->
+        </a>
+        </div>
+      </div>
     {% endfor %}
-    </ul>
-    <button class="update-playlist-button" data-id="{{ playlist.id }}">Update Playlist</button>
   </div>
-{% endfor %}
+
+  <div class="playlist">
+    {% for playlist in playlists %}
+      <div class="playlist-item">
+        <h3>{{ playlist.name }}</h3>
+        <p>{{ playlist.owner }}</p>
+        <p>Songs:</p>
+        <ul>
+          {% for song in playlist.songs.all %}
+            <li>{{ song.title }} by {{ song.artist }}</li>
+          {% endfor %}
+        </ul>
+        <button class="update-playlist-button" data-id="{{ playlist.id }}">Update Playlist</button>
+      </div>
+    {% endfor %}
+  </div>
 
   <button id="create-playlist" class="playlist-button">Add Playlist</button>  <!-- Add Playlist button -->
 

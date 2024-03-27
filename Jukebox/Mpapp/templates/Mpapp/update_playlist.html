@@ -1,14 +1,17 @@
 {% extends "Mpapp/base_generic.html" %}
+{% load static %}
 
 {% block content %}
   <h2>Update Playlist</h2>
   <!-- ... Display playlist details ... -->
-  <ul>
+  <ul class="song-list">
     {% for song in playlist.songs.all %}
-      <li>
-        {{ song.title }} by {{ song.artist }}
+      <li class="song">
+        <div class="song-info">
+          {{ song.title }} by {{ song.artist }}
+        </div>
         <!-- Delete song from playlist button -->
-        <form action="{% url 'delete_song_from_playlist' playlist.id song.id %}" method="post">
+        <form action="{% url 'delete_song_from_playlist' playlist.id song.id %}" method="post" class="action-button">
           {% csrf_token %}
           <input type="submit" value="Delete Song" class="button">
         </form>
@@ -16,7 +19,7 @@
     {% endfor %}
   </ul>
   <!-- Add song to playlist dropdown -->
-  <form action="{% url 'add_song_to_playlist' playlist.id %}" method="post">
+  <form action="{% url 'add_song_to_playlist' playlist.id %}" method="post" class="playlist-item">
     {% csrf_token %}
     <select name="song_id">
       {% for song in all_songs %}
@@ -28,7 +31,7 @@
     <input type="submit" value="Add Song" class="button">
   </form>
   <!-- Delete playlist button -->
-  <form action="{% url 'delete_playlist' playlist.id %}" method="post">
+  <form action="{% url 'delete_playlist' playlist.id %}" method="post" class="playlist-item">
     {% csrf_token %}
     <input type="submit" value="Delete Playlist" class="button">
   </form>
