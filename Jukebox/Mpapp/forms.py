@@ -1,10 +1,8 @@
-# Mpapp/forms.py
-
 from django import forms
-from .models import Playlist, Song
+from .models import Song, Playlist
 
 class PlaylistForm(forms.ModelForm):
-    songs = forms.ModelMultipleChoiceField(queryset=Song.objects.all(), widget=forms.CheckboxSelectMultiple)
+    songs = forms.ModelMultipleChoiceField(queryset=Song.objects.all(), required=False)
 
     class Meta:
         model = Playlist
