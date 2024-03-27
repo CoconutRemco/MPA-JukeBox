@@ -1,12 +1,22 @@
 <!-- Mpapp/templates/Mpapp/create_playlist.html -->
-
 {% extends "Mpapp/base_generic.html" %}
+{% load static %}
 
 {% block content %}
-  <h2>Create Playlist</h2>
-  <form method="post">
+  <h2 class="page-title">Create Playlist</h2>
+  <form method="post" class="playlist-item">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save</button>
+    <!-- Name input field -->
+    <input type="text" name="name" placeholder="Playlist Name" required>
+    <select name="songs" class="song-select" multiple>
+      {% for song in all_songs %}
+        {% if not song in playlist.songs.all %}
+          <option value="{{ song.id }}">{{ song.title }} by {{ song.artist }}</option>
+        {% endif %}
+      {% endfor %}
+    </select>
+    <button type="submit" class="button">Save</button>
   </form>
+  <!-- Go back to jukebox button -->
+  <a href="{% url 'jukebox' %}" class="button">Go back to Jukebox</a>
 {% endblock %}
