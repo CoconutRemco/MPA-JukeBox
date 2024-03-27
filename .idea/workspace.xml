@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51e7e7b6-4c62-441f-938b-5426b484898b" name="Changes" comment="Prachtige styling toegevoegd voor de songs nu door op de playlists">
+    <list default="true" id="51e7e7b6-4c62-441f-938b-5426b484898b" name="Changes" comment="Alles werkt de styling is prachtig en de functionaliteit ook!!!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Jukebox/Mpapp/static/Mpapp/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Jukebox/Mpapp/static/Mpapp/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jukebox/Mpapp/templates/Mpapp/create_playlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/Jukebox/Mpapp/templates/Mpapp/create_playlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jukebox/Mpapp/templates/Mpapp/jukebox.html" beforeDir="false" afterPath="$PROJECT_DIR$/Jukebox/Mpapp/templates/Mpapp/jukebox.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jukebox/Mpapp/templates/Mpapp/update_playlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/Jukebox/Mpapp/templates/Mpapp/update_playlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jukebox/Mpapp/templates/Mpapp/base_generic.html" beforeDir="false" afterPath="$PROJECT_DIR$/Jukebox/Mpapp/templates/Mpapp/base_generic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jukebox/Mpapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Jukebox/Mpapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Jukebox/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Jukebox/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +92,7 @@
       <workItem from="1711012488899" duration="877000" />
       <workItem from="1711368663550" duration="2083000" />
       <workItem from="1711439739071" duration="15694000" />
-      <workItem from="1711525749819" duration="10613000" />
+      <workItem from="1711525749819" duration="12792000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -159,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711533446672</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Alles werkt de styling is prachtig en de functionaliteit ook!!!">
+      <option name="closed" value="true" />
+      <created>1711536804962</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1711536804962</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,7 +193,8 @@
     <MESSAGE value="Alle data komt binnen in de database en word nu gebruikt om songs en bestaande playlists te tonen nu nog ervoor zorgen dat ik playlist kan aanpassen" />
     <MESSAGE value="Update playlist werkt nu met functies volledig ga nu door naar spotify styling" />
     <MESSAGE value="Prachtige styling toegevoegd voor de songs nu door op de playlists" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prachtige styling toegevoegd voor de songs nu door op de playlists" />
+    <MESSAGE value="Alles werkt de styling is prachtig en de functionaliteit ook!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Alles werkt de styling is prachtig en de functionaliteit ook!!!" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MPA_JukeBox$.coverage" NAME=" Coverage Results" MODIFIED="1710922300231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Jukebox/Mpapp" />
