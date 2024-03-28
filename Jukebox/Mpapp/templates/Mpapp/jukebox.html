@@ -8,6 +8,12 @@
 </head>
   <h2>Jukebox</h2>
 
+  <!-- Add this search form to your jukebox.html template -->
+  <form id="searchForm">
+    <input type="text" id="searchInput" placeholder="Search songs by producer or name">
+    <button type="submit">Search</button>
+  </form>
+
   <div class="song-list">
     <h2>All songs</h2>
     {% for song in songs %}
@@ -64,83 +70,131 @@
   </div>
 
 <script>
-    var selectedSongs = [];
-    var songElements = document.querySelectorAll('.song');
+document.addEventListener('DOMContentLoaded', function() {
+  var selectedSongs = [];
+  var songElements = document.querySelectorAll('.song');
 
-    function selectSong(songElement) {
-      var songId = songElement.getAttribute('data-id');
-      if (selectedSongs.includes(songId)) {
-        // If the song is already selected, deselect it
-        selectedSongs = selectedSongs.filter(id => id !== songId); // Remove the song from the array
-        var songListItem = document.querySelector('#selectedSongs li[data-id="' + songId + '"]');
-        songListItem.remove(); // Remove the song from the HTML list
-        songElement.style.backgroundColor = ''; // Reset the background color
-      } else {
-        // If the song is not selected, select it
-        selectedSongs.push(songId);
-        var songTitle = songElement.querySelector('.song-info h3').textContent;
-        document.getElementById('selectedSongs').innerHTML += '<li data-id="' + songId + '">' + songTitle + '</li>';
-        songElement.style.backgroundColor = 'blue'; // Change the background color to blue
-      }
+  function selectSong(songElement) {
+    var songId = songElement.getAttribute('data-id');
+    if (selectedSongs.includes(songId)) {
+      selectedSongs = selectedSongs.filter(id => id !== songId);
+      var songListItem = document.querySelector('#selectedSongs li[data-id="' + songId + '"]');
+      songListItem.remove();
+      songElement.style.backgroundColor = '';
+    } else {
+      selectedSongs.push(songId);
+      var songTitle = songElement.querySelector('.song-info h3').textContent;
+      document.getElementById('selectedSongs').innerHTML += '<li data-id="' + songId + '">' + songTitle + '</li>';
+      songElement.style.backgroundColor = 'blue';
     }
-   document.getElementById('create-playlist').addEventListener('click', function() {
-    document.getElementById('newPlaylistModal').style.display = 'block'; // Show the modal
+  }
+
+  document.getElementById('searchForm').addEventListener('submit', function(event) {
+    event.preventDefault();  // Prevent the form from being submitted normally
+    var query = document.getElementById('searchInput').value;
+    fetch('/search_songs/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': '{{ csrf_token }}'
+        },
+        body: JSON.stringify({
+            query: query
+        })
+    }).then(function(response) {
+        if (response.ok) {
+            response.json().then(function(songs) {
+                // Update the song list with the search results
+                updateSongList(songs);
+            });
+        } else {
+            console.log('Failed to search songs');
+        }
+    }).catch(function(error) {
+        console.log('Error during fetch:', error);
+    });
+});
+
+  document.getElementById('create-playlist').addEventListener('click', function() {
+    document.getElementById('newPlaylistModal').style.display = 'block';
     songElements.forEach(function(songElement) {
       songElement.addEventListener('click', function() {
         selectSong(this);
-        document.getElementById('playlistNameSection').style.display = 'block'; // Show the playlist name input and submit button
+        document.getElementById('playlistNameSection').style.display = 'block';
       });
     });
   });
 
-    document.getElementById('newPlaylistForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      var playlistName = document.getElementById('playlistName').value;
-      fetch('/create_playlist/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-CSRFToken': '{{ csrf_token }}'
-        },
-        body: JSON.stringify({
-          song_ids: selectedSongs,
-          playlist_name: playlistName
-        })
-      }).then(function(response) {
-        if (response.ok) {
-          document.getElementById('newPlaylistModal').style.display = 'none';
-          location.reload();
-        } else {
-          response.text().then(function(text) {
-            console.log('Failed to create playlist:', text);
-          });
-          alert('Failed to create playlist');
-        }
-      }).catch(function(error) {
-        console.log('Error during fetch:', error);
-      });
-    });
+   function updateSongList(songs) {
+    // Get the song list element
+    var songList = document.querySelector('.song-list');
 
-    document.getElementById('cancelPlaylist').addEventListener('click', function() {
-      document.getElementById('newPlaylistModal').style.display = 'none'; // Hide the modal
-    });
+    // Clear the current song list
+    songList.innerHTML = '';
 
-    document.getElementById('get-playlists').addEventListener('click', function() {
-      fetch('/get_playlists/')
-        .then(function(response) {
-          if (response.ok) {
-            response.json().then(function(playlists) {
-              console.log('Playlists:', playlists);
-            });
-          } else {
-            response.text().then(function(text) {
-              console.log('Failed to get playlists:', text);
-            });
-          }
-        })
-        .catch(function(error) {
-          console.log('Error during fetch:', error);
+    // Add each song to the song list
+    songs.forEach(function(song) {
+        console.log(song);  // Print out the song data
+
+        var songElement = document.createElement('div');
+        songElement.className = 'song';
+        songElement.innerHTML = `
+            <img src="${song.image_url}" alt="${song.title}">
+            <div class="song-info">
+              <h3>${song.title}</h3>
+              <p>${song.artist}</p>
+             <a href="${song.spotify_url}" class="button play-button" target="_blank">
+              <span class="play-icon">&#9658;</span> <!-- This is a simple play icon -->
+            </a>
+            </div>
+        `;
+        songList.appendChild(songElement);
+    });
+}
+
+  document.getElementById('newPlaylistForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var playlistName = document.getElementById('playlistName').value;
+    fetch('/create_playlist/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': '{{ csrf_token }}'
+      },
+      body: JSON.stringify({
+        song_ids: selectedSongs,
+        playlist_name: playlistName
+      })
+    }).then(function(response) {
+      if (response.ok) {
+        document.getElementById('newPlaylistModal').style.display = 'none';
+        location.reload();
+      } else {
+        response.text().then(function(text) {
+          console.log('Failed to create playlist:', text);
         });
+        alert('Failed to create playlist');
+      }
+    }).catch(function(error) {
+      console.log('Error during fetch:', error);
     });
+  });
+
+  document.getElementById('cancelPlaylist').addEventListener('click', function() {
+    document.getElementById('newPlaylistModal').style.display = 'none';
+  });
+
+  document.getElementById('get-playlists').addEventListener('click', function() {
+    window.location.href = '/spotify_request/';
+  });
+
+  var updateButtons = document.querySelectorAll('.update-playlist-button');
+  updateButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      var playlistId = this.getAttribute('data-id');
+      window.location.href = '/update_playlist/' + playlistId + '/';
+    });
+  });
+});
 </script>
 {% endblock %}
