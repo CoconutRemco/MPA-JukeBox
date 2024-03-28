@@ -11,7 +11,7 @@
   <div class="song-list">
     <h2>All songs</h2>
     {% for song in songs %}
-    <div class="song">
+    <div class="song" data-id="{{ song.id }}">
         <img src="{{ song.image_url }}" alt="{{ song.title }}">
         <div class="song-info">
           <h3>{{ song.title }}</h3>
@@ -45,21 +45,102 @@
 
   <button id="get-playlists" class="playlist-button">Get Playlists</button>
 
-  <script>
-    document.getElementById('get-playlists').addEventListener('click', function() {
-      window.location.href = '/spotify_request';
-    });
+  <!-- Add this modal to your jukebox.html template -->
+  <div id="newPlaylistModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <form id="newPlaylistForm">
+        <label for="songs">Selected Songs</label>
+        <ul id="selectedSongs">
+        </ul>
 
-    var updateButtons = document.querySelectorAll('.update-playlist-button');
-    updateButtons.forEach(function(button) {
-      button.addEventListener('click', function() {
-        var id = this.getAttribute('data-id');
-        window.location.href = '/update_playlist/' + id;
+        <div id="playlistNameSection" style="display: none;">
+          <label for="playlistName">Playlist Name</label>
+          <input type="text" id="playlistName" name="playlistName" required>
+          <button type="submit">Create Playlist</button>
+          <button type="button" id="cancelPlaylist">Cancel</button> <!-- Cancel button -->
+        </div>
+      </form>
+    </div>
+  </div>
+
+<script>
+    var selectedSongs = [];
+    var songElements = document.querySelectorAll('.song');
+
+    function selectSong(songElement) {
+      var songId = songElement.getAttribute('data-id');
+      if (selectedSongs.includes(songId)) {
+        // If the song is already selected, deselect it
+        selectedSongs = selectedSongs.filter(id => id !== songId); // Remove the song from the array
+        var songListItem = document.querySelector('#selectedSongs li[data-id="' + songId + '"]');
+        songListItem.remove(); // Remove the song from the HTML list
+        songElement.style.backgroundColor = ''; // Reset the background color
+      } else {
+        // If the song is not selected, select it
+        selectedSongs.push(songId);
+        var songTitle = songElement.querySelector('.song-info h3').textContent;
+        document.getElementById('selectedSongs').innerHTML += '<li data-id="' + songId + '">' + songTitle + '</li>';
+        songElement.style.backgroundColor = 'blue'; // Change the background color to blue
+      }
+    }
+   document.getElementById('create-playlist').addEventListener('click', function() {
+    document.getElementById('newPlaylistModal').style.display = 'block'; // Show the modal
+    songElements.forEach(function(songElement) {
+      songElement.addEventListener('click', function() {
+        selectSong(this);
+        document.getElementById('playlistNameSection').style.display = 'block'; // Show the playlist name input and submit button
+      });
+    });
+  });
+
+    document.getElementById('newPlaylistForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var playlistName = document.getElementById('playlistName').value;
+      fetch('/create_playlist/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': '{{ csrf_token }}'
+        },
+        body: JSON.stringify({
+          song_ids: selectedSongs,
+          playlist_name: playlistName
+        })
+      }).then(function(response) {
+        if (response.ok) {
+          document.getElementById('newPlaylistModal').style.display = 'none';
+          location.reload();
+        } else {
+          response.text().then(function(text) {
+            console.log('Failed to create playlist:', text);
+          });
+          alert('Failed to create playlist');
+        }
+      }).catch(function(error) {
+        console.log('Error during fetch:', error);
       });
     });
 
-    document.getElementById('create-playlist').addEventListener('click', function() {
-      window.location.href = '/create_playlist';
+    document.getElementById('cancelPlaylist').addEventListener('click', function() {
+      document.getElementById('newPlaylistModal').style.display = 'none'; // Hide the modal
     });
-  </script>
+
+    document.getElementById('get-playlists').addEventListener('click', function() {
+      fetch('/get_playlists/')
+        .then(function(response) {
+          if (response.ok) {
+            response.json().then(function(playlists) {
+              console.log('Playlists:', playlists);
+            });
+          } else {
+            response.text().then(function(text) {
+              console.log('Failed to get playlists:', text);
+            });
+          }
+        })
+        .catch(function(error) {
+          console.log('Error during fetch:', error);
+        });
+    });
+</script>
 {% endblock %}
