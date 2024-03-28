@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="51e7e7b6-4c62-441f-938b-5426b484898b" name="Changes" comment="Inlog beveiliging logout button add plalist updated en ziet er stukken beter uit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jukebox/Mpapp/templates/Mpapp/jukebox.html" beforeDir="false" afterPath="$PROJECT_DIR$/Jukebox/Mpapp/templates/Mpapp/jukebox.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jukebox/Mpapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Jukebox/Mpapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Jukebox/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Jukebox/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,6 +91,7 @@
       <workItem from="1711439739071" duration="15694000" />
       <workItem from="1711525749819" duration="14020000" />
       <workItem from="1711612353789" duration="5807000" />
+      <workItem from="1711633482466" duration="997000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -182,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711614737918</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Laatse commit van de dag">
+      <option name="closed" value="true" />
+      <created>1711628382878</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1711628382878</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,7 +219,8 @@
     <MESSAGE value="Alles werkt de styling is prachtig en de functionaliteit ook!!!" />
     <MESSAGE value="Login en Logout werkend restrictions op paginas en logout bar met welcome user" />
     <MESSAGE value="Inlog beveiliging logout button add plalist updated en ziet er stukken beter uit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Inlog beveiliging logout button add plalist updated en ziet er stukken beter uit" />
+    <MESSAGE value="Laatse commit van de dag" />
+    <option name="LAST_COMMIT_MESSAGE" value="Laatse commit van de dag" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MPA_JukeBox$.coverage" NAME=" Coverage Results" MODIFIED="1710922300231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Jukebox/Mpapp" />
