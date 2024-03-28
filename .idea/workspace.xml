@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="51e7e7b6-4c62-441f-938b-5426b484898b" name="Changes" comment="Inlog beveiliging logout button add plalist updated en ziet er stukken beter uit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jukebox/Mpapp/templates/Mpapp/jukebox.html" beforeDir="false" afterPath="$PROJECT_DIR$/Jukebox/Mpapp/templates/Mpapp/jukebox.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jukebox/Mpapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Jukebox/Mpapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Jukebox/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Jukebox/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +27,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
