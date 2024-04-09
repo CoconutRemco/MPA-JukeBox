@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51e7e7b6-4c62-441f-938b-5426b484898b" name="Changes" comment="Inlog beveiliging logout button add plalist updated en ziet er stukken beter uit">
+      <change afterPath="$PROJECT_DIR$/Jukebox/Mpapp/migrations/0010_user_alter_playlist_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jukebox/Mpapp/migrations/0011_alter_playlist_user_delete_user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Jukebox/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Jukebox/db.sqlite3" afterDir="false" />
     </list>
@@ -92,6 +94,11 @@
       <workItem from="1711525749819" duration="14020000" />
       <workItem from="1711612353789" duration="5807000" />
       <workItem from="1711633482466" duration="997000" />
+      <workItem from="1712041007056" duration="1132000" />
+      <workItem from="1712127222600" duration="1071000" />
+      <workItem from="1712215402994" duration="7928000" />
+      <workItem from="1712572326244" duration="3330000" />
+      <workItem from="1712645775889" duration="295000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
